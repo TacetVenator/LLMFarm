@@ -1,0 +1,25 @@
+name: Tailor Swift Lint
+
+on: [push, pull_request]
+
+jobs:
+  tailor-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Install Tailor
+        run: |
+          wget https://github.com/sleekbyte/tailor/releases/download/v0.12.0/tailor-0.12.0.tar
+          tar -xvf tailor-0.12.0.tar
+          sudo mv tailor-0.12.0/tailor /usr/local/bin/tailor
+
+      - name: Run Tailor Lint
+        run: tailor
