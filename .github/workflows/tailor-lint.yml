@@ -24,4 +24,4 @@ jobs:
       - name: Run Tailor Lint
         run: |
           java -cp tailor-0.12.0/lib/tailor-0.12.0.jar com.sleekbyte.tailor.Main
-          tailor
+          é
