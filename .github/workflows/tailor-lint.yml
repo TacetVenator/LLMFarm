@@ -19,9 +19,10 @@ jobs:
         run: |
           wget https://github.com/sleekbyte/tailor/releases/download/v0.12.0/tailor-0.12.0.tar
           tar -xvf tailor-0.12.0.tar
+          sudo chmod +x tailor-0.12.0/* 
           sudo mv tailor-0.12.0/bin/tailor /usr/local/bin/tailor
 
       - name: Run Tailor Lint
         run: |
-          java -cp tailor-0.12.0/lib/tailor-0.12.0.jar com.sleekbyte.tailor.Main
-          tailor
+          cd tailor-0.12.0/
+          bin/tailor
