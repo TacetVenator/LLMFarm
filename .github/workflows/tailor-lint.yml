@@ -25,4 +25,5 @@ jobs:
       - name: Run Tailor Lint
         run: |
           cd tailor-0.12.0/
+          ls -lah ./bin
           ./bin/tailor
